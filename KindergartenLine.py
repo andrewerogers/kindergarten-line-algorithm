@@ -4,7 +4,7 @@
 length = 1000 ## length of line
 kLine = [0]*length ## initializing array of all 0's
 MAX_ITERATIONS = .6*length ## number of iterations
-j = 0 ## while loop iterant
+j = 0 ## while loop index
 
 ## importing random library to make random modulus
 from random import randrange
