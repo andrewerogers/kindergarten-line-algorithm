@@ -4,6 +4,7 @@
 length = 1000 ## length of line
 kLine = [0]*length ## initializing array of all 0's
 MAX_ITERATIONS = 600 ## number of iterations
+j = 0 ## while loop iterant
 
 ## importing random library to make random modulus
 from random import randrange
@@ -21,8 +22,11 @@ def printArray(kLine):
 print("Initial State: ")
 printArray(kLine)
 
+
 ## modeling line behavior
-j = 0 ## while loop iterant
+## the while loop is included to make it
+## easy to vary the number of passes
+
 while j < MAX_ITERATIONS:
     for i in range(length - 1):
         ## if students are facing each other turn around
