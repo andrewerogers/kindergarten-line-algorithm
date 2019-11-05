@@ -1,9 +1,9 @@
-## Notice the variable MAX_ITERATIONS is set to 60, this does
+## Notice the variable MAX_ITERATIONS is set to .6*length, this does
 ## not work for worst case runtime but it does for average case runtime.
 
 length = 1000 ## length of line
 kLine = [0]*length ## initializing array of all 0's
-MAX_ITERATIONS = 600 ## number of iterations
+MAX_ITERATIONS = .6*length ## number of iterations
 j = 0 ## while loop iterant
 
 ## importing random library to make random modulus
