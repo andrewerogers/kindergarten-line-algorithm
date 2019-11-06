@@ -1,10 +1,10 @@
-## Notice the variable MAX_ITERATIONS is set to .6*length, this does
-## not work for worst case runtime but it does for average case runtime.
+## Notice the variable numIterations can be changed to investigate
+## the number of iterations required by the algorithm
 
-length = 1000 ## length of line
+length = 100 ## length of line
 kLine = [0]*length ## initializing array of all 0's
-MAX_ITERATIONS = .6*length ## number of iterations
-j = 0 ## while loop index
+numIterations = 100 ## number of iterations
+
 
 ## importing random library to make random modulus
 from random import randrange
@@ -24,21 +24,25 @@ printArray(kLine)
 
 
 ## modeling line behavior
-## the while loop is included to make it
-## easy to vary the number of passes
+## prints each behavior change
 
-while j < MAX_ITERATIONS:
-    for i in range(length - 1):
+for j in range(numIterations):
+    k = 0 ## reset while loop index to start at front of line
+    while k < length - 1:
         ## if students are facing each other turn around
-        if(kLine[i] == 1 and kLine[i + 1] == 0):
-            kLine[i] = 0
-            kLine[i+1] = 1
-            i+=1 ## increment i again to avoid data overwrite
-
-    j+=1
+        if(kLine[k] == 1 and kLine[k + 1] == 0):
+            kLine[k] = 0
+            kLine[k+1] = 1
+            k+= 1 ## increment i again to avoid data overwrite
+            
+            ## as algorithm is O(n^2) comment out for large n
+            ##print() ## print the behavior change
+            ##print("Behvaior Change: ") 
+            ##printArray(kLine)
+            
+        k+=1
 
 ## printing final state after line behavior
 print()
 print("Final State: ")
 printArray(kLine) 
-
